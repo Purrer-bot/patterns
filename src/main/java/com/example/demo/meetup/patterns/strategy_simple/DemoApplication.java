@@ -23,6 +23,9 @@ public class DemoApplication implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         testCalculations();
 
+        System.out.println("==========");
+
+        testCalculations1();
     }
 
 
@@ -37,5 +40,18 @@ public class DemoApplication implements ApplicationRunner {
         System.out.println(userVatService.calculateVatForUser_BadWay(userVATRequest2));
 
     }
+
+    void testCalculations1() {
+        UserVATRequest userVATRequest = new UserVATRequest(1, BigDecimal.valueOf(1), VatPaymentType.ANIMAL_SUPPLY);
+        UserVATRequest userVATRequest1 = new UserVATRequest(1, BigDecimal.valueOf(1), VatPaymentType.FOOD);
+        UserVATRequest userVATRequest2 = new UserVATRequest(1, BigDecimal.valueOf(1), VatPaymentType.FUEL);
+
+
+        System.out.println(userVatService.calculate(userVATRequest));
+        System.out.println(userVatService.calculate(userVATRequest1));
+        System.out.println(userVatService.calculate(userVATRequest2));
+
+    }
+
 
 }

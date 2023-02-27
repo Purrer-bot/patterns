@@ -1,16 +1,24 @@
 package com.example.demo.meetup.patterns.ordered_cof;
 
+import com.example.demo.meetup.patterns.ordered_cof.refactor.UserInfoHandler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.List;
 
 @SpringBootApplication
 public class DemoApplication implements ApplicationRunner {
 
     @Autowired
     UserInfoService userInfoService;
+
+    @Autowired
+    @Qualifier("order")
+    List<UserInfoHandler> userInfoHandlerList;
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);

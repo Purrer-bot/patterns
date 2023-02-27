@@ -1,7 +1,11 @@
 package com.example.demo.meetup.patterns.strategy_candidated;
 
-import com.example.demo.strategy.choose_strategy.Course;
+import com.example.demo.meetup.patterns.strategy_candidated.refactor.CriteriaAwareRecommendationProvider;
+import com.example.demo.meetup.patterns.strategy_candidated.refactor.DefaultRecommendationProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class RecommendationService {
@@ -42,4 +46,16 @@ public class RecommendationService {
         throw new RuntimeException();
     }
 
+    @Autowired
+    private List<CriteriaAwareRecommendationProvider> criteriaAwareRecommendationProviderList;
+
+    @Autowired
+    private DefaultRecommendationProvider defaultRecommendationProvider;
+    public Course getRecommendation(UserInfoDto userInfoDto){
+        for (CriteriaAwareRecommendationProvider criteriaAwareRecommendationProvider : criteriaAwareRecommendationProviderList) {
+            if(criteriaAwareRecommendationProvider.isCandidateFor(userInfoDto))
+                return criteriaAwareRecommendationProvider.getCourse();
+        }
+        return defaultRecommendationProvider.getCourse();
+    }
 }

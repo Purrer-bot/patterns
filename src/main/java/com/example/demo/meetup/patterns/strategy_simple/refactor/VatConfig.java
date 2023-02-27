@@ -1,5 +1,6 @@
-package com.example.demo.meetup.patterns.strategy_simple;
+package com.example.demo.meetup.patterns.strategy_simple.refactor;
 
+import com.example.demo.meetup.patterns.strategy_simple.VatPaymentType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

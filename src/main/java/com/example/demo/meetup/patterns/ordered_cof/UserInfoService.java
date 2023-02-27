@@ -55,22 +55,6 @@ public class UserInfoService {
         user.setEmailVerified(true);
     }
 
-//    @Autowired
-//    @Qualifier("ordered")
-//    List<UserProcessingService> userProcessingServices;
-//
-//
-//    public String processUser(ExternalUserInfoDto externalUserInfoDto) {
-//        User user = userRepository.getUser(externalUserInfoDto.getUserId());
-//
-//
-//        for (UserProcessingService userProcessingService : userProcessingServices) {
-//            user = userProcessingService.process(user, externalUserInfoDto);
-//        }
-//
-//        return user.toString();
-//    }
-
 
     //
 ////    @Autowired

@@ -1,5 +1,8 @@
-package com.example.demo.meetup.patterns.strategy_simple;
+package com.example.demo.meetup.patterns.strategy_simple.refactor;
 
+import com.example.demo.meetup.patterns.strategy_simple.UserVATRequest;
+import com.example.demo.meetup.patterns.strategy_simple.VatPaymentType;
+import com.example.demo.meetup.patterns.strategy_simple.refactor.VatCalculator;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;

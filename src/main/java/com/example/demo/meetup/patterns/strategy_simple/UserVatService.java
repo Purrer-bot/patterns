@@ -1,5 +1,6 @@
 package com.example.demo.meetup.patterns.strategy_simple;
 
+import com.example.demo.meetup.patterns.strategy_simple.refactor.VatCalculator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
